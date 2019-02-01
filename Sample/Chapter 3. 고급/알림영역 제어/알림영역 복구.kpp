@@ -1,0 +1,6 @@
+함수 a, b, c
+
+a~부모의 핸들("Shell_TrayWnd","")
+b~자식의 핸들(a,"0","TrayNotifyWnd","")
+
+윈도우 제어(b,"5")

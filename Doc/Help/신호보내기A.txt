@@ -1,0 +1,20 @@
+Private Const HWND_BROADCAST& = &HFFFF&
+Private Const HWND_TOPMOST& = -1&
+Private Const HWND_BOTTOM& = 1&
+Private Const HWND_DESKTOP& = 0&
+Private Const HWND_MESSAGE& = -3&
+Private Const HWND_NOTOPMOST& = -2&
+Private Const HWND_TOP& = 0&
+
+Public Const WM_CHAR = &H102
+Public Const WM_CLOSE = &H10
+Public Const WM_GETTEXT = &HD
+Public Const WM_GETTEXTLENGTH = &HE
+Public Const WM_KEYDOWN = &H100
+Public Const WM_KEYUP = &H101
+Public Const WM_LBUTTONDBLCLK = &H203
+Public Const WM_LBUTTONDOWN = &H201
+Public Const WM_LBUTTONUP = &H202
+Public Const WM_RBUTTONDOWN = &H204
+Public Const WM_RBUTTONUP = &H205
+Public Const WM_SETTEXT = &HC

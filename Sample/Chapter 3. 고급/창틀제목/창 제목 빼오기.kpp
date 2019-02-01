@@ -1,0 +1,8 @@
+함수 a, b
+
+실행("C:\Windows\notepad.exe","4")
+
+a~부모의 핸들("Notepad","")
+b~창틀제목(a,"256")
+
+제목(b)

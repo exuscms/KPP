@@ -1,0 +1,13 @@
+
+ - 부모의 핸들(FindWindow API) -
+
+[FindWindow("클래스","창틀")]
+
+FindWindow("메모장","")
+ - 클래스가 메모장인 창을 찾기
+
+FindWindow("","메모장")
+ - 창의 제목이 메모장인 창을 찾기
+
+FindWindow("","")
+ - 아무창이나 찾기

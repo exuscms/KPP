@@ -1,0 +1,6 @@
+함수 a, b
+실행("C:\Windows\notepad.exe","4")
+a~부모의 핸들("Notepad","")
+b~자식의 핸들(a,"0","Edit","")
+스트링보내기(a,"&HC","256","KPP API 기초")
+스트링보내기(b,"&HC","256","SendString")

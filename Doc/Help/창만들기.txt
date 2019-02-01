@@ -1,0 +1,12 @@
+
+ - 창만들기(CreateWindowsEx API) -
+
+창만들기("스타일1","클래스이름","창이름","스타일2","X","Y","넓이","높이","소속","hmenu")
+
+스타일1 = "&H20000, &H20&"
+
+스타일2 = "&H40000000, &H4&, &H80000"
+
+X, Y = "&H80000000"
+
+클래스 = "BUTTON, STATIC, EDIT, MDICLIENT, SCROLLBAR, COMBOBOX"

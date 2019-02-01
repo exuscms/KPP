@@ -1,0 +1,143 @@
+
+		#################################
+		#################################
+		##                             ##
+		##	  # Kernel 32 #	       ##
+		##                             ##
+		#################################
+		#################################
+
+ # Console # 
+
+#Console # Kernel 32
+Public Declare Function FreeConsole Lib "kernel32" () As Long
+Public Declare Function WriteConsole Lib "kernel32" Alias "WriteConsoleA" (ByVal hConsoleOutput As Long, lpBuffer As Any, ByVal nNumberOfCharsToWrite As Long, lpNumberOfCharsWritten As Long, lpReserved As Any) As Long
+
+#Alloc Console
+Public Declare Function AllocConsole Lib "kernel32" () As Long
+
+ # Process #
+
+#Terminal Process
+
+Public Declare Function TerminateProcess Lib "kernel32" (ByVal hProcess As Long, ByVal uExitCode As Long) As Long
+
+#Open Process
+Public Declare Function OpenProcess Lib "kernel32" (ByVal dwDesiredAccess As Long, ByVal bInheritHandle As Long, ByVal dwProcessId As Long) As Long
+(with GetWindowThreadProcessId)
+
+
+ # Handle #
+
+#Close Handle
+Public Declare Function CloseHandle Lib "kernel32" (ByVal hObject As Long) As Long
+
+#Get Std Handle
+Public Declare Function GetStdHandle Lib "kernel32" (ByVal nStdHandle As Long) As Long
+
+ # Profile #
+
+#Write Private Profile String
+Public Declare Function WritePrivateProfileString Lib "kernel32" Alias "WritePrivateProfileStringA" (ByVal lpApplicationName As String, ByVal lpKeyName As String, ByVal lpString As String, ByVal lpFileName As String) As Long
+
+		#################################
+		#################################
+		##                             ##
+		##	   # User 32 #	       ##
+		##                             ##
+		#################################
+		#################################
+
+ # Windows #
+
+#Create Windows Ex
+Public Declare Function CreateWindowEx Lib "user32" Alias "CreateWindowExA" (ByVal dwExStyle As Long, ByVal lpClassName As String, ByVal lpWindowName As String, ByVal dwStyle As Long, ByVal x As Long, ByVal y As Long, ByVal nWidth As Long, ByVal nHeight As Long, ByVal hWndParent As Long, ByVal hMenu As Long, ByVal hInstance As Long, lpParam As Any) As Long
+
+#Set Windows Position
+Public Declare Function SetWindowPos Lib "user32" (ByVal hwnd As Long, ByVal hWndInsertAfter As Long, ByVal x As Long, ByVal y As Long, ByVal cx As Long, ByVal cy As Long, ByVal wFlags As Long) As Long
+
+#Show Windows
+Public Declare Function ShowWindow Lib "user32" (ByVal hwnd As Long, ByVal nCmdShow As Long) As Long
+
+#Find Windows
+Public Declare Function FindWindow Lib "user32" Alias "FindWindowA" (ByVal lpClassName As String, ByVal lpWindowName As String) As Long
+Public Declare Function FindWindowEx Lib "user32" Alias "FindWindowExA" (ByVal hWnd1 As Long, ByVal hWnd2 As Long, ByVal lpsz1 As String, ByVal lpsz2 As String) As Long
+
+ # ETC # 
+Public Declare Function SetParent Lib "user32" (ByVal hWndChild As Long, ByVal hWndNewParent As Long) As Long
+Public Declare Function ExitWindows Lib "user32" Alias "ExitWindowsEx" (ByVal dwOptions As Long, ByVal dwReserved As Long) As Long
+Public Declare Function EnableWindow Lib "user32" (ByVal hwnd As Long, ByVal fEnable As Long) As Long
+Public Declare Function GetWindowTextLength Lib "user32.dll" Alias "GetWindowTextLengthA" (ByVal hwnd As Long) As Long
+Public Declare Function GetWindowText Lib "user32.dll" Alias "GetWindowTextA" (ByVal hwnd As Long, ByVal lpString As String, ByVal nMaxCount As Long) As Long
+Public Declare Function IsWindowVisible Lib "user32" (ByVal hwnd As Long) As Long
+Public Declare Function GetWindowThreadProcessId Lib "user32" (ByVal hwnd As Long, lpdwProcessId As Long) As Long
+Public Declare Function EnumWindows Lib "user32.dll" (ByVal lpEnumFunc As Long, ByVal lParam As Long) As Long
+Public Declare Function GetForegroundWindow Lib "user32.dll" () As Long
+Public Declare Function IsWindowVisible Lib "user32" (ByVal hwnd As Long) As Long
+Public Declare Function GetWindowRect Lib "user32" (ByVal hwnd As Long, lpRect As RECT) As Long
+Public Declare Function SystemParametersInfo Lib "user32" Alias "SystemParametersInfoA" (ByVal uAction As Long, ByVal uParam As Long, ByRef lpvParam As Any, ByVal fuWinIni As Long) As Long
+
+ # Hook # 
+
+#Hook # User 32
+Public Declare Function CallNextHookEx Lib "user32" (ByVal hHook As Long, ByVal nCode As Long, ByVal wParam As Long, lParam As Any) As Long
+Public Declare Function SetWindowsHookEx Lib "user32" Alias "SetWindowsHookExA" (ByVal idHook As Long, ByVal lpfn As Long, ByVal hmod As Long, ByVal dwThreadId As Long) As Long
+Public Declare Function UnhookWindowsHookEx Lib "user32" (ByVal hHook As Long) As Long
+
+ # Clipboard
+
+#Empty ClIpboard
+Public Declare Function EmptyClipboard Lib "user32" () As Long
+
+ # Mouse #
+
+#Swap Mouse Button
+Public Declare Function SwapMouseButton Lib "user32" (ByVal bSwap As Long) As Long
+
+#Set Cursor Position
+Public Declare Function SetCursorPos Lib "user32" (ByVal x As Long, ByVal y As Long) As Long
+
+#Get Cursor Position
+Public Declare Function GetCursorPos Lib "user32" (lpPoint As PointAPI) As Long
+
+ # Desktop #
+
+#Paint(Screenshot) Desktop
+Public Declare Function PaintDesktop Lib "user32" (ByVal hdc As Long) As Long
+
+#Send Message String
+Public Declare Function SendMessageSTRING Lib "user32" Alias "SendMessageA" (ByVal hwnd As Long, ByVal wMsg As Long, ByVal wParam As Long, ByVal lParam As String) As Long
+
+		#################################
+		#################################
+		##                             ##
+		##	  # Advapi 32 #	       ##
+		##                             ##
+		#################################
+		#################################
+
+#Create & Set Value of Registry
+Public Declare Function RegCreateKey& Lib "advapi32.DLL" Alias "RegCreateKeyA" (ByVal hKey As Long, ByVal lpszSubKey As String, lphKey As Long)
+Public Declare Function RegSetValue& Lib "advapi32.DLL" Alias "RegSetValueA" (ByVal hKey As Long, ByVal lpszSubKey As String, ByVal fdwType As Long, ByVal lpszValue As String, ByVal dwLength As Long)
+
+		#################################
+		#################################
+		##                             ##
+		##	   # Winmm #	       ##
+		##                             ##
+		#################################
+		#################################
+
+#Send Message to Device(MCI)
+Public Declare Function mciSendString Lib "winmm.dll" Alias "mciSendStringA" (ByVal lpszCommand As String, ByVal lpszReturnString As String, ByVal cchReturnLength As Long, ByVal hwndCallback As Long) As Long
+
+		#################################
+		#################################
+		##                             ##
+		##	   # Shell 32 #	       ##
+		##                             ##
+		#################################
+		#################################
+
+#Sheell Execute
+Public Declare Function ShellExecute Lib "shell32.dll" Alias "ShellExecuteA" (ByVal hwnd As Long, ByVal lpOperation As String, ByVal lpFile As String, ByVal lpParameters As String, ByVal lpDirectory As String, ByVal nShowCmd As Long) As Long

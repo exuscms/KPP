@@ -1,0 +1,5 @@
+
+
+ - 쓰레드프로세스ID(GetWindowThreadProcessId API) -
+
+창으로부터 프로세스 식별자를 얻는 API입니다.

@@ -1,0 +1,7 @@
+함수 a, b, c
+
+a~부모의 핸들("Shell_TrayWnd","")
+b~자식의 핸들(a,"0","TrayNotifyWnd","")
+c~자식의 핸들("0&","0&","Progman","")
+
+프로그램 내장(a,c)

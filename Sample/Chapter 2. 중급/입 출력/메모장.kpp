@@ -1,0 +1,23 @@
+함수 file, input, all, output
+
+output~경로("C:\메모.txt")
+
+만약 (output) = ("1")
+
+file~열기("C:\메모.txt")
+출력("내용 : " & file)
+출력("띄우기")
+input~입력("문자")
+제목(input) 
+all = file & input
+저장("C:\메모.txt",all)
+지우기()
+다시읽기("0")
+
+끝
+
+만약 (output) = ("0")
+
+저장("C:\메모.txt","")
+
+끝
